@@ -1,0 +1,9 @@
+---
+- hosts: localhost
+  become: yes
+  become_method: sudo
+  tasks:
+  - name: install apache server
+    apt: name=apache2 state=installed
+  - name: service restart apache
+    service: name=apache2 state=running
