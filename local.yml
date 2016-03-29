@@ -5,4 +5,4 @@
   - name: name of user
     shell: 'uname'
     register: login
-    debug: var=login
+  - debug: var=login
