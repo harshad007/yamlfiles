@@ -4,5 +4,5 @@
   user: ubuntu
   connection: local
   tasks:
-  - name: install apache server
-    apt: name=apache2 state=absent
+  - name: name of user
+    shell: 'uname'
