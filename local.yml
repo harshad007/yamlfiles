@@ -2,7 +2,6 @@
 - hosts: localhost
   connection: local
   tasks:
-  - name: name of user
-    shell: 'whoami'
-    register: login
-  - debug: var=login
+  - name: install update
+    apt: name=* state=latest
+  
