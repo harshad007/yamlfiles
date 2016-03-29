@@ -3,6 +3,6 @@
   connection: local
   tasks:
   - name: name of user
-    shell: 'uname'
+    shell: 'whoami'
     register: login
   - debug: var=login
