@@ -1,8 +1,6 @@
 ---
 - hosts: localhost
   connection: local
-  become: yes
-  become_method: sudo
   tasks:
   - name: install apache server
     apt: name=apache2 state=installed
