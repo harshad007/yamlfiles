@@ -1,7 +1,8 @@
 ---
 - hosts: localhost
   connection: local
+  become: yes
+  become_method: sudo
   tasks:
-  - name: install update
-    apt: name=* state=latest
-  
+  - name: install some stuff
+    apt: name=tree state=present
