@@ -1,0 +1,9 @@
+#playbook.yml
+---
+- hosts: web
+  become: yes
+  become_method: sudo
+  tasks:
+  roles:
+  - webserver
+  - dbserver 

@@ -1,0 +1,26 @@
+---
+# This playbook deploys the whole application stack in this site.  
+
+# Apply common configuration to all hosts
+
+# Configure and deploy database servers.
+
+# Configure and deploy the web servers. Note that we include two roles here, 
+# the 'base-apache' role which simply sets up Apache, and 'web' which includes
+# our example web application.
+
+# Configure and deploy the load balancer(s).
+- hosts: lbservers
+  become: yes
+  become_method: sudo
+  remote_user: ubuntu
+  roles:
+  - haproxy
+
+# Configure and deploy the Nagios monitoring node(s).
+- hosts: webservers
+  become: yes
+  become_method: sudo
+  remote_user: ubuntu
+  roles:
+  - base-apache

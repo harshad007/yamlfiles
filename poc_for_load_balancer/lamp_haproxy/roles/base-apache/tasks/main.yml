@@ -1,0 +1,19 @@
+- name: 1. install Apache
+  apt: name=apache2 state=present
+
+- name: Install http and php etc
+  yum: name=httpd state=present
+  when: ansible_os_family == "RedHat"
+
+- name: http service state
+  service: name=httpd state=started enabled=yes
+  when: ansible_os_family == "RedHat"
+
+- name: 2. install PHP module for Apache
+  apt: name=libapache2-mod-php5 state=present
+
+- name: 3. start Apache
+  service: name=apache2 state=running enabled=yes
+
+- name: 4. install Hello World PHP script
+  template: src=template/index.html.j2 dest=/var/www/html/index.html mode=0664
