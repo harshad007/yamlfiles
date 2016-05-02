@@ -1,2 +1,5 @@
 [jenkins]
 52.39.35.129 ansible_user=ubuntu
+
+[local]
+localhost
