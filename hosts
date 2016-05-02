@@ -1,5 +1,12 @@
 [jenkins]
-52.39.35.129 ansible_user=ubuntu
+52.39.35.129
 
 [local]
 localhost
+
+[hostname:children]
+jenkins
+local
+
+[hostname:vars]
+ansible_user=ubuntu
