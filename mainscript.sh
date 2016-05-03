@@ -1,3 +1,3 @@
-date
-git rebase master
-git checkout master
+git add .
+git commit -m "new file added/updated"
+git push origin master
