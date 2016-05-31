@@ -1,5 +1,10 @@
-curl -X POST --data-urlencode 
-'payload={"channel": "#build-info", "username": "webhookbot", 
-"text": "This is posted to #build-info and comes from a bot named webhookbot. With Build_ID: #'${BUILD_ID}'", 
-"icon_emoji": ":ghost:"}' 
-https://hooks.slack.com/services/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
+import groovy.json.JsonOutput
+
+def notifySlack(text, channel) {
+    def slackURL = 'https://hooks.slack.com/services/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'
+    def payload = JsonOutput.toJson([channel: channel,
+                                      text:  text,
+                                     username: "jenkins",
+                                     icon_emoji: ":monkey:"])
+    sh "curl -X POST --data-urlencode \'payload=${payload}\' ${slackURL}"
+}
