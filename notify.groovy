@@ -6,6 +6,5 @@ def notifySlack(text, channel) {
                                       text:  text,
                                      username: "jenkins",
                                      icon_emoji: ":monkey:"])
-    sh "curl -X POST --data-urlencode \'payload=${payload}\' ${slackURL} > scalr.out"
-  def out = readFile 'scalr.out'
+    sh "curl -X POST --data-urlencode \'payload=${payload}\' ${slackURL}"
 }
