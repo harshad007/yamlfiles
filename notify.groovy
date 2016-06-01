@@ -1,1 +1,1 @@
-def response = ["curl", "-k", "-X", "POST", "-H", "Content-Type: application/json", "-d", 'payload={"channel": "#build-info", "username": "webhookbot", "text": "This is posted to"}', "https://hooks.slack.com/services/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"].execute().text
+def response = ["curl", "-X", "POST", 'payload={"channel": "#build-info", "username": "webhookbot", "text": "This is posted to"}', "https://hooks.slack.com/services/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"].execute().text
