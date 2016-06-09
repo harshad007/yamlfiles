@@ -1,5 +1,5 @@
 def test3(){
-["curl", "-i", "-XPOST", "--data-urlencode", 'payload={"channel": "#build-info",
+["curl", "-i", "-XPOST", "--data-urlencode", 'payload={"channel": "#build-info",\\
 "username": "webhookbot",
 "text": "This is groovy script generated notification",
 "icon_emoji": ":monkey:"}',
