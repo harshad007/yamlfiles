@@ -1,6 +1,5 @@
 import hudson.model.*
 import java.io.File;
-import jenkins.model.Jenkins;  
 
 def BUILD_NUMBER=env.BUILD_NUMBER
 def test3(){
